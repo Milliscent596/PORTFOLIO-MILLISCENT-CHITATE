@@ -1,0 +1,256 @@
+---
+export interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Milliscent Chitate - Data Scientist" />
+    <title>{title} | Milliscent Chitate</title>
+    <style>
+      /* ===== RESET & BASE ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: white;
+        line-height: 1.6;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      /* ===== FULL SCREEN BACKGROUND IMAGE ===== */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/bg.jfif');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: -2;
+        filter: none !important;
+      }
+
+      /* ===== DARK OVERLAY - TEXT READABILITY ===== */
+      body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 10, 26, 0.75);
+        z-index: -1;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn-primary {
+        display: inline-block;
+        background: #7c3aed;
+        color: white;
+        padding: 14px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn-primary:hover {
+        background: #6d28d9;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+      }
+
+      .btn-secondary {
+        display: inline-block;
+        background: transparent;
+        color: white;
+        padding: 14px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #7c3aed;
+      }
+
+      /* ===== SECTIONS ===== */
+      .section {
+        padding: 60px 0;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+
+      .section-subtitle {
+        color: #c4b5d4;
+        font-size: 1.1rem;
+        max-width: 500px;
+        margin-bottom: 40px;
+      }
+
+      .section-divider {
+        width: 60px;
+        height: 4px;
+        background: #7c3aed;
+        margin-bottom: 16px;
+        border-radius: 2px;
+      }
+
+      /* ===== GRID ===== */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      /* ===== CARDS - Glassmorphism ===== */
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 16px;
+        transition: all 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(124, 58, 237, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        color: white;
+      }
+
+      .card p {
+        color: #c4b5d4;
+        font-size: 0.95rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(124, 58, 237, 0.25);
+        color: #a78bfa;
+        padding: 4px 14px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin: 4px;
+        font-weight: 500;
+        border: 1px solid rgba(124, 58, 237, 0.2);
+      }
+
+    
+
+      /* ===== ABOUT PAGE SPECIFIC ===== */
+      .about-card {
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px;
+        border-radius: 16px;
+      }
+
+      .about-card h4 {
+        color: white;
+        margin-bottom: 16px;
+      }
+
+      .about-card ul li {
+        color: #c4b5d4;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .about-card ul li strong {
+        color: white;
+      }
+
+      .about-card ul li:last-child {
+        border-bottom: none;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
+        .section {
+          padding: 40px 0;
+          min-height: auto;
+        }
+        .profile-pic {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

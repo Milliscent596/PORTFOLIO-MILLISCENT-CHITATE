@@ -1,0 +1,39 @@
+---
+const testimonials = [
+  {
+    name: "ZIMSTAT",
+    text: "Milliscent's automation of our CPI reporting reduced manual work by 70% and improved accuracy significantly.",
+    role: "Data Team Lead"
+  },
+  {
+    name: "Ministry of Health",
+    text: "The Scientific Hardship Index provided invaluable insights that shaped our policy decisions.",
+    role: "Policy Division"
+  }
+];
+---
+
+<section class="section" style="
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+">
+  <div class="container" style="text-align: center;">
+    <div class="section-divider" style="margin: 0 auto 16px;"></div>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-subtitle" style="margin: 0 auto 40px;">Trusted by organisations that value data-driven decisions</p>
+
+    <div class="grid-2">
+      {testimonials.map(t => (
+        <div class="card">
+          <p style="color: #c4b5d4; font-style: italic; font-size: 1.05rem; line-height: 1.8;">"{t.text}"</p>
+          <div style="margin-top: 16px;">
+            <p style="color: white; font-weight: 600;">{t.name}</p>
+            <p style="color: #94a3b8; font-size: 0.85rem;">{t.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

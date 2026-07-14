@@ -1,0 +1,49 @@
+---
+const projects = [
+  {
+    title: "CPI & Inflation Automation",
+    company: "ZIMSTAT",
+    description: "Developed an automated system for tracking and reporting Consumer Price Index and inflation data, reducing manual workload by 70%.",
+    tech: ["Python", "SQL", "Power BI"],
+    icon: "📊"
+  },
+  {
+    title: "Scientific Hardship Index",
+    company: "Ministry of Health",
+    description: "Created a data-driven index to measure and monitor hardship levels, enabling evidence-based policy-making and resource allocation.",
+    tech: ["R", "Python", "Tableau"],
+    icon: "🏥"
+  },
+  {
+    title: "Database Pipelines",
+    company: "ZIMSTAT",
+    description: "Designed and implemented ETL pipelines for efficient data processing and storage, improving data accessibility by 50%.",
+    tech: ["SQL", "Python", "Airflow"],
+    icon: "🗄️"
+  }
+];
+---
+
+<section id="projects" class="section" style="background: #f8fafc;">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    <p class="section-subtitle">
+      Real-world projects that demonstrate my data science and automation expertise
+    </p>
+    <div class="grid-3">
+      {projects.map(project => (
+        <div class="card">
+          <div class="card-icon">{project.icon}</div>
+          <h3>{project.title}</h3>
+          <p style="color: #7c3aed; font-weight: 600; font-size: 0.9rem;">{project.company}</p>
+          <p style="margin: 12px 0;">{project.description}</p>
+          <div>
+            {project.tech.map(tech => (
+              <span class="tag">{tech}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

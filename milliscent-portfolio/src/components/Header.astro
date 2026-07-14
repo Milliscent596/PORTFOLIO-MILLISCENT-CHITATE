@@ -1,0 +1,59 @@
+<header style="
+  background: rgba(10, 10, 26, 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+">
+  <nav class="container" style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  ">
+    <!-- Left:  -->
+    <a href="/" style="
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    ">
+      Milliscent Chitate
+    </a>
+
+    <!-- Right: Navigation -->
+    <ul style="
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      align-items: center;
+    ">
+      <li><a href="/" style="text-decoration: none; color: #c4b5d4; font-weight: 500; font-size: 0.9rem; transition: color 0.3s;">Home</a></li>
+      <li><a href="/about" style="text-decoration: none; color: #c4b5d4; font-weight: 500; font-size: 0.9rem; transition: color 0.3s;">About</a></li>
+      <li><a href="/skills" style="text-decoration: none; color: #c4b5d4; font-weight: 500; font-size: 0.9rem; transition: color 0.3s;">Skills</a></li>
+      <li><a href="/services" style="text-decoration: none; color: #c4b5d4; font-weight: 500; font-size: 0.9rem; transition: color 0.3s;">Services</a></li>
+      <li><a href="/portfolio" style="text-decoration: none; color: #c4b5d4; font-weight: 500; font-size: 0.9rem; transition: color 0.3s;">Portfolio</a></li>
+      <li><a href="/contact" style="text-decoration: none; color: #c4b5d4; font-weight: 500; font-size: 0.9rem; transition: color 0.3s;">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  a:hover {
+    color: #a78bfa !important;
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      gap: 12px !important;
+    }
+    ul li a {
+      font-size: 0.75rem !important;
+    }
+    [style*="font-size: 1.2rem"] {
+      font-size: 0.9rem !important;
+    }
+  }
+</style>

@@ -1,0 +1,142 @@
+---
+const services = [
+  {
+    title: "Web Hosting",
+    description: "Your site needs a home that's fast and dependable. I host it so you can focus on your business—with SSL, room to grow, and minimal fuss.",
+    features: [
+      "99.9% uptime so your site stays online",
+      "SSL included so visitors feel safe",
+      "Scale up when you're ready"
+    ],
+    cta: "View Pricing →",
+    price: "From $15/mo"
+  },
+  {
+    title: "Web Design & Development",
+    description: "Websites and web apps that look great and load fast. Built for real users and for search engines, so you get more visitors and fewer bounces.",
+    features: [
+      "Looks good on every device",
+      "Built so Google can find you",
+      "Fast load times that keep people on the page"
+    ],
+    cta: "View Pricing →",
+    price: "From $100"
+  },
+  {
+    title: "Data Science & Analytics",
+    description: "Turn your numbers into pictures and reports you can actually use. See what's working, spot trends, and make decisions with confidence.",
+    features: [
+      "Dashboards that tell the story",
+      "Reports and forecasts you can share",
+      "Data from different sources in one place"
+    ],
+    cta: "Book an Appointment →",
+    price: "From $100"
+  },
+  {
+    title: "Business Intelligence",
+    description: "Transform raw data into actionable insights. Get custom dashboards, automated reports, and predictive analytics for your business.",
+    features: [
+      "Custom dashboards tailored to your business",
+      "Automated reporting and alerts",
+      "Predictive analytics and forecasting"
+    ],
+    
+    cta: "Learn More →",
+    price: "From $100"
+  },
+  {
+    title: "AI & Automation",
+    description: "Leverage artificial intelligence and automation to streamline your operations, reduce costs, and uncover new opportunities.",
+    features: [
+      "AI-powered chatbots for customer service",
+      "Automated data processing and analysis",
+      "Machine learning models for predictions"
+    ],
+    cta: "Learn More →",
+    price: "From $200"
+  },
+  {
+    title: "Training & Consultation",
+    description: "Empower your team with data literacy and AI skills. I provide hands-on training and strategic consultation for your organisation.",
+    features: [
+      "Data science and analytics training",
+      "AI strategy and implementation",
+      "Ongoing support and mentorship"
+    ],
+    icon: "🎓",
+    cta: "Book a Session →",
+    price: "From $20/hr"
+  }
+];
+---
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">My Services</h2>
+    <p class="section-subtitle">
+      Data-driven solutions for Zimbabwean businesses
+    </p>
+
+    <div class="grid-3">
+      {services.map(service => (
+        <div class="card" style="display: flex; flex-direction: column; height: 100%;">
+          <span class="card-icon">{service.icon}</span>
+          <h3 style="font-size: 1.3rem; margin-bottom: 8px;">{service.title}</h3>
+          <p style="color: #c4b5d4; font-size: 0.95rem; line-height: 1.7; flex-grow: 1;">
+            {service.description}
+          </p>
+          
+          <!-- Features List -->
+          <ul style="
+            list-style: none;
+            margin: 16px 0;
+            padding: 0;
+          ">
+            {service.features.map(feature => (
+              <li style="
+                color: #c4b5d4;
+                font-size: 0.85rem;
+                padding: 4px 0;
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+              ">
+                <span style="color: #7c3aed;">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <!-- Price & CTA -->
+          <div style="
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          ">
+            <span style="color: #a78bfa; font-weight: 700; font-size: 1.1rem;">
+              {service.price}
+            </span>
+            <a href="/contact" style="
+              color: #a78bfa;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9rem;
+              transition: color 0.3s;
+            ">
+              {service.cta} →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="/contact" class="btn-primary">Need a Custom Solution?</a>
+    </div>
+  </div>
+</section>
